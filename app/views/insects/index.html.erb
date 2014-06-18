@@ -1,0 +1,22 @@
+<%= form_for @insect do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :characteristic %>
+    <%= f.text_field :characteristic %>
+  </p>
+  <p>
+    <%= f.submit 'Create insect' %>
+  </p>
+
+<% end %>
+
+<% @insects.each do |insect| %>
+<ul>
+  <li>
+    <%= insect.name %>, <%= insect.characteristic %>
+  </li>
+</ul>
+<% end %>
