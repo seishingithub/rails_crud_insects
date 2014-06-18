@@ -32,4 +32,20 @@ feature 'Manage Insects' do
     expect(page).to have_content 'cockroach'
     expect(page).to have_content 'scary'
   end
+
+  scenario 'User can delete insect from a list' do
+    visit '/'
+    click_on 'Add an insect'
+    fill_in 'Name', with: 'grasshopper'
+    fill_in 'Characteristic', with: 'jumps'
+    click_on 'Create insect'
+    expect(page).to have_content 'grasshopper'
+    expect(page).to have_content 'jumps'
+    click_on 'grasshopper'
+    expect(page).to have_content 'grasshopper'
+    expect(page).to have_content 'jumps'
+    click_on 'Delete insect'
+    expect(page).to have_no_content 'grasshopper'
+    expect(page).to have_no_content 'jumps'
+  end
 end

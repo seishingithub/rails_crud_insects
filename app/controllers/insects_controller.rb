@@ -29,6 +29,12 @@ class InsectsController < ApplicationController
     redirect_to insects_path
   end
 
+  def destroy
+    @insect = Insect.find(params[:id]).delete
+
+    redirect_to insects_path
+  end
+
   private
   def insect_params
     params.require(:insect).permit(:name, :characteristic)
