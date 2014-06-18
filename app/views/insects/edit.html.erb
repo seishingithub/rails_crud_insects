@@ -8,15 +8,7 @@
     <%= f.text_field :characteristic %>
   </p>
   <p>
-    <%= f.submit 'Create insect' %>
+    <%= f.submit 'Update insect' %>
   </p>
 
-<% end %>
-
-<% @insects.each do |insect| %>
-<ul>
-  <li>
-    <%= link_to "#{insect.name}", insect_path(insect) %>, <%= insect.characteristic %>
-  </li>
-</ul>
 <% end %>
